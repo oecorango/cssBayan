@@ -1,0 +1,36 @@
+body {
+	background-color: #bbbab8;
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 90%;
+	padding: 0 5%;
+}
+
+input {
+	display: none;
+}
+
+label {
+	cursor: pointer;
+	display: block;
+	border-top: 2px solid #e77e50;
+	padding: 15px 20px;
+	width: 100%;
+	box-sizing: border-box;
+	transition: color .35s;
+}
+label:hover {
+	color: #FFF;
+}
+label:before {
+	content: '\276F';
+	float: right;
+}
+
+
