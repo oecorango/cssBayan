@@ -1,7 +1,32 @@
-body {
-	background-color: #bbbab8;
+* {
 	margin: 0;
-	padding: 0;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+@media (min-width: 420px) {
+	html {
+		font-size: 15px;
+	}
+}
+@media (min-width: 920px) {
+	html {
+		font-size: 20px;
+	}
+}
+
+body {
+	background-color: #ecf1e5;
+}
+
+h1 {
+	font-size: 1.5rem;
+}
+
+.header {
+	padding: 2rem 0;
 }
 
 .wrapper {
@@ -9,7 +34,19 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	width: 90%;
-	padding: 0 5%;
+	margin: 0 5%;
+}
+@media (min-width: 420px) {
+	.wrapper {
+		width: 84%;
+		margin: 0 8%;
+	}
+}
+@media (min-width: 920px) {
+	.wrapper {
+		width: 70%;
+		margin: 0 15%;
+	}
 }
 
 input {
@@ -17,20 +54,52 @@ input {
 }
 
 label {
-	cursor: pointer;
 	display: block;
-	border-top: 2px solid #e77e50;
-	padding: 15px 20px;
+	font-size: 1.5rem;
+	border-top: 1px solid #e77e50;
+	padding: 1rem 0;
 	width: 100%;
 	box-sizing: border-box;
-	transition: color .35s;
 }
-label:hover {
-	color: #FFF;
+@media (min-width: 920px) {
+	label {
+		cursor: pointer;
+		border-top: 2px solid #e77e50;
+		transition: color .35s;
+	}
+	label:hover {
+		color: #0d1bdd;
+	}
 }
-label:before {
-	content: '\276F';
-	float: right;
+
+.accordion__body {
+	display: flex;
+	justify-content: center;
+	padding: 1rem 0;
+	transform: scale(0);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	margin: auto; 
+	max-height: 100vh;
+}
+
+.accordion__container .accordion__body {
+	height: 0;
+	padding: 0 30px;
+	transition: padding 0.3s;
+} 
+
+.accordion__container input:checked + label + .accordion__body {
+	height: auto;
+	padding: 10px;
+	transition: all 0.3s;
+	transform: scale(1);
 }
 
 
+.image {
+	transform: scale(0);
+}
