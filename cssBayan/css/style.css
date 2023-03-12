@@ -41,9 +41,6 @@ body {
 h1 {
 	font-size: 1.5rem;
 	font-size: bold;
-}
-
-.header {
 	padding: 1rem 0;
 }
 
@@ -58,24 +55,31 @@ input {
 }
 
 label {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
 	font-size: 1.5rem;
 	border-top: 1px solid #e77e50;
-	padding: 0.7rem 0;
+	padding: 0.5rem 0;
 	width: 100%;
 	box-sizing: border-box;
+	transition: 0.4s;
 }
+
+.label__header {
+	display: flex;
+	justify-content:space-between;
+}
+
 @media (max-width: 920px) {
-	label:after {
-		content: '\002B';
-		color: #000;
-		font-weight: bold;
-		float: right;
-		margin-right: 10px;
+	.btn {
+		display: block;
+	}
+	.meme__wrapper .btn {
 		transition: all .35s;
 		transform: rotate(0deg)
 	}
-	input:checked ~ label:after {
+	input:checked + label .btn {
 		transition: all .35s;
 		transform: rotate(45deg)
 	}
@@ -86,69 +90,58 @@ label {
 		cursor: pointer;
 		color: #6519f3;
 		border-top: 2px solid #e77e50;
-		transition: color .35s;
+		transition: color .3s;
 	}
 	input:checked ~ label {
 		color: #000;
 	}
+	.btn {
+		display: none;
+	}
 }
 
-.accordion__body {
-	display: flex;
-	justify-content: center;
-	padding: 1rem 0;
-	transform: scale(0);
-}
-
-img {
+.accordion__img {
+	display: block;
 	max-width: 100%;
+	padding: 0.2rem 0;
 	height: auto;
 	margin: auto; 
+	height: 0;
 	max-height: 100vh;
+	transform: scale(0);
+	transition: all .3s;
 }
 
-.accordion__container .accordion__body {
-	height: 0;
-	padding: 0 30px;
-	transition: padding 0.3s;
-} 
-
 @media (min-width: 920px) {
-	.meme__wrapper:hover {
-		cursor: pointer;
-	}
 	.accordion__container:hover label {
 		color: #000000;
 	}
-	.accordion__container:hover label:after {
-		content: '\002B';
-		color: #000;
-		font-weight: bold;
-		float: right;
-		margin-right: 10px;
-		transition: all .35s;
-		transform: rotate(0deg)
+	.accordion__container:hover .btn {
+		display: block;
 	}
-	.accordion__container:hover input:checked ~ label:after {
-		transition: all .35s;
-		transform: rotate(45deg)
-	}
-	.meme__wrapper:hover .accordion__body {
+	.meme__wrapper:hover .accordion__img {
 		height: auto;
-		padding: 10px;
-		transition: all .35s;
+		padding: 1rem 0;
+		transition: all .3s;
 		transform: scale(1);
 	}
-	.meme__wrapper:hover label:after {
+	input:checked + label .btn {
 		transition: all .35s;
 		transform: rotate(45deg)
+	}
+	.meme__wrapper:hover > label .btn {
+		transition: all .35s;
+		transform: rotate(45deg)
+	}
+	.meme__wrapper > label .btn {
+		transition: all .3s;
+		transform: rotate(0deg);
 	}
 }
 
-.accordion__container input:checked + label + .accordion__body {
+input:checked + label .accordion__img {
 	height: auto;
-	padding: 10px;
-	transition: all 0.3s;
+	padding: 1rem 0;
 	transform: scale(1);
 }
 
