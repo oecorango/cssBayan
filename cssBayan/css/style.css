@@ -3,10 +3,13 @@
 }
 
 html {
+	font-family: 'Noto Serif', serif;
   font-size: 10px;
   scroll-behavior: smooth;
+	overflow-x: hidden;
+	margin-right: calc(-1 * (100vw - 100%));
 }
-@media (min-width: 420px) {
+@media (min-width: 500px) {
 	html {
 		font-size: 15px;
 	}
@@ -19,34 +22,35 @@ html {
 
 body {
 	background-color: #ecf1e5;
+	width: 90%;
+	margin: 0 5%;
+}
+@media (min-width: 500px) {
+	body {
+		width: 84%;
+		margin: 0 8%;
+	}
+}
+@media (min-width: 920px) {
+	body {
+		width: 70%;
+		margin: 0 15%;
+	}
 }
 
 h1 {
 	font-size: 1.5rem;
+	font-size: bold;
 }
 
 .header {
-	padding: 2rem 0;
+	padding: 1rem 0;
 }
 
 .wrapper {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	width: 90%;
-	margin: 0 5%;
-}
-@media (min-width: 420px) {
-	.wrapper {
-		width: 84%;
-		margin: 0 8%;
-	}
-}
-@media (min-width: 920px) {
-	.wrapper {
-		width: 70%;
-		margin: 0 15%;
-	}
 }
 
 input {
@@ -57,18 +61,35 @@ label {
 	display: block;
 	font-size: 1.5rem;
 	border-top: 1px solid #e77e50;
-	padding: 1rem 0;
+	padding: 0.7rem 0;
 	width: 100%;
 	box-sizing: border-box;
 }
+@media (max-width: 920px) {
+	label:after {
+		content: '\002B';
+		color: #000;
+		font-weight: bold;
+		float: right;
+		margin-right: 10px;
+		transition: all .35s;
+		transform: rotate(0deg)
+	}
+	input:checked ~ label:after {
+		transition: all .35s;
+		transform: rotate(45deg)
+	}
+}
+
 @media (min-width: 920px) {
 	label {
 		cursor: pointer;
+		color: #6519f3;
 		border-top: 2px solid #e77e50;
 		transition: color .35s;
 	}
-	label:hover {
-		color: #0d1bdd;
+	input:checked ~ label {
+		color: #000;
 	}
 }
 
@@ -92,6 +113,38 @@ img {
 	transition: padding 0.3s;
 } 
 
+@media (min-width: 920px) {
+	.meme__wrapper:hover {
+		cursor: pointer;
+	}
+	.accordion__container:hover label {
+		color: #000000;
+	}
+	.accordion__container:hover label:after {
+		content: '\002B';
+		color: #000;
+		font-weight: bold;
+		float: right;
+		margin-right: 10px;
+		transition: all .35s;
+		transform: rotate(0deg)
+	}
+	.accordion__container:hover input:checked ~ label:after {
+		transition: all .35s;
+		transform: rotate(45deg)
+	}
+	.meme__wrapper:hover .accordion__body {
+		height: auto;
+		padding: 10px;
+		transition: all .35s;
+		transform: scale(1);
+	}
+	.meme__wrapper:hover label:after {
+		transition: all .35s;
+		transform: rotate(45deg)
+	}
+}
+
 .accordion__container input:checked + label + .accordion__body {
 	height: auto;
 	padding: 10px;
@@ -99,7 +152,12 @@ img {
 	transform: scale(1);
 }
 
+.copyright {
+	display: flex;
+	justify-content:center;
+	align-items: center;
+}
 
-.image {
-	transform: scale(0);
+.year {
+	margin: 0 5rem;
 }
