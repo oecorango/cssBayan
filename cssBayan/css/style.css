@@ -71,7 +71,7 @@ label {
 	justify-content:space-between;
 }
 
-@media (max-width: 920px) {
+@media (hover: none) {
 	.btn {
 		display: block;
 	}
@@ -85,7 +85,7 @@ label {
 	}
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
 	label {
 		cursor: pointer;
 		color: #6519f3;
@@ -112,7 +112,7 @@ label {
 	transition: all .3s;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
 	.accordion__container:hover label {
 		color: #000000;
 	}
