@@ -4,19 +4,19 @@
 
 html {
 	font-family: 'Noto Serif', serif;
-  font-size: 10px;
+  font-size: 3vw;
   scroll-behavior: smooth;
 	overflow-x: hidden;
 	margin-right: calc(-1 * (100vw - 100%));
 }
 @media (min-width: 500px) {
 	html {
-		font-size: 15px;
+		font-size: 2vw;
 	}
 }
 @media (min-width: 920px) {
 	html {
-		font-size: 20px;
+		font-size: 1vw;
 	}
 }
 
@@ -59,7 +59,7 @@ label {
 	flex-direction: column;
 	justify-content:space-between;
 	font-size: 1.5rem;
-	border-top: 1px solid #e77e50;
+	border-top: 0.1vw solid #e77e50;
 	padding: 0.5rem 0;
 	width: 100%;
 	box-sizing: border-box;
@@ -89,7 +89,7 @@ label {
 	label {
 		cursor: pointer;
 		color: #6519f3;
-		border-top: 2px solid #e77e50;
+		border-top: 0.1vw solid #e77e50;
 		transition: color .3s;
 	}
 	input:checked ~ label {
@@ -109,7 +109,7 @@ label {
 	height: 0;
 	max-height: 100vh;
 	transform: scale(0);
-	transition: all .3s;
+	transition: all 1s;
 }
 
 @media (hover: hover) {
@@ -120,9 +120,8 @@ label {
 		display: block;
 	}
 	.meme__wrapper:hover .accordion__img {
-		height: auto;
-		padding: 1rem 0;
-		transition: all .3s;
+		height: 25rem;
+		transition: all 1s;
 		transform: scale(1);
 	}
 	input:checked + label .btn {
@@ -140,8 +139,8 @@ label {
 }
 
 input:checked + label .accordion__img {
-	height: auto;
-	padding: 1rem 0;
+	height: 25rem;
+	transition: all 1s;
 	transform: scale(1);
 }
 
