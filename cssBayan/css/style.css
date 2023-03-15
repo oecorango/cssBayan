@@ -63,12 +63,13 @@ label {
 	padding: 0.5rem 0;
 	width: 100%;
 	box-sizing: border-box;
-	transition: 0.4s;
+	transition: all 0.35s;
 }
 
 .label__header {
 	display: flex;
 	justify-content:space-between;
+	transition: all .35s;
 }
 
 @media (hover: none) {
@@ -90,7 +91,7 @@ label {
 		cursor: pointer;
 		color: #6519f3;
 		border-top: 0.1vw solid #e77e50;
-		transition: color .3s;
+		transition: all .35s;
 	}
 	input:checked ~ label {
 		color: #000;
@@ -109,7 +110,7 @@ label {
 	height: 0;
 	max-height: 100vh;
 	transform: scale(0);
-	transition: all 1s;
+	transition: all .35s;
 }
 
 @media (hover: hover) {
@@ -121,7 +122,7 @@ label {
 	}
 	.meme__wrapper:hover .accordion__img {
 		height: 25rem;
-		transition: all 1s;
+		transition: all .35s;
 		transform: scale(1);
 	}
 	input:checked + label .btn {
@@ -133,14 +134,14 @@ label {
 		transform: rotate(45deg)
 	}
 	.meme__wrapper > label .btn {
-		transition: all .3s;
+		transition: all .35s;
 		transform: rotate(0deg);
 	}
 }
 
 input:checked + label .accordion__img {
 	height: 25rem;
-	transition: all 1s;
+	transition: all 0.35s;
 	transform: scale(1);
 }
 
@@ -152,4 +153,16 @@ input:checked + label .accordion__img {
 
 .year {
 	margin: 0 5rem;
+}
+
+.meme__wrapper:active label {
+	color: blue;
+	opacity: 0.5;
+	transition: all .1s;
+}
+
+.meme__wrapper:active img {
+	color: blue;
+	opacity: 0.5;
+	transition: all .35s;
 }
