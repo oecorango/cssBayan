@@ -1,0 +1,168 @@
+* {
+	margin: 0;
+}
+
+html {
+	font-family: 'Noto Serif', serif;
+  font-size: 3vw;
+  scroll-behavior: smooth;
+	overflow-x: hidden;
+	margin-right: calc(-1 * (100vw - 100%));
+}
+@media (min-width: 500px) {
+	html {
+		font-size: 2vw;
+	}
+}
+@media (min-width: 920px) {
+	html {
+		font-size: 1vw;
+	}
+}
+
+body {
+	background-color: #ecf1e5;
+	width: 90%;
+	margin: 0 5%;
+}
+@media (min-width: 500px) {
+	body {
+		width: 84%;
+		margin: 0 8%;
+	}
+}
+@media (min-width: 920px) {
+	body {
+		width: 70%;
+		margin: 0 15%;
+	}
+}
+
+h1 {
+	font-size: 1.5rem;
+	font-size: bold;
+	padding: 1rem 0;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+input {
+	display: none;
+}
+
+label {
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
+	font-size: 1.5rem;
+	border-top: 0.1vw solid #e77e50;
+	padding: 0.5rem 0;
+	width: 100%;
+	box-sizing: border-box;
+	transition: all 0.35s;
+}
+
+.label__header {
+	display: flex;
+	justify-content:space-between;
+	transition: all .35s;
+}
+
+@media (hover: none) {
+	.btn {
+		display: block;
+	}
+	.meme__wrapper .btn {
+		transition: all .35s;
+		transform: rotate(0deg)
+	}
+	input:checked + label .btn {
+		transition: all .35s;
+		transform: rotate(45deg)
+	}
+}
+
+@media (hover: hover) {
+	label {
+		cursor: pointer;
+		color: #6519f3;
+		border-top: 0.1vw solid #e77e50;
+		transition: all .35s;
+	}
+	input:checked ~ label {
+		color: #000;
+	}
+	.btn {
+		display: none;
+	}
+}
+
+.accordion__img {
+	display: block;
+	max-width: 100%;
+	padding: 0.2rem 0;
+	height: auto;
+	margin: auto; 
+	height: 0;
+	max-height: 100vh;
+	transform: scale(0);
+	transition: all .35s;
+}
+
+@media (hover: hover) {
+	.accordion__container:hover label {
+		color: #000000;
+	}
+	.accordion__container:hover .btn {
+		display: block;
+	}
+	.meme__wrapper:hover .accordion__img {
+		height: 25rem;
+		transition: all .35s;
+		transform: scale(1);
+	}
+	input:checked + label .btn {
+		transition: all .35s;
+		transform: rotate(45deg)
+	}
+	.meme__wrapper:hover > label .btn {
+		transition: all .35s;
+		transform: rotate(45deg)
+	}
+	.meme__wrapper > label .btn {
+		transition: all .35s;
+		transform: rotate(0deg);
+	}
+}
+
+input:checked + label .accordion__img {
+	height: 25rem;
+	transition: all 0.35s;
+	transform: scale(1);
+}
+
+.copyright {
+	display: flex;
+	justify-content:center;
+	align-items: center;
+}
+
+.year {
+	margin: 0 5rem;
+}
+
+.meme__wrapper:active label {
+	color: blue;
+	opacity: 0.5;
+	transition: all .1s;
+}
+
+.meme__wrapper:active img {
+	color: blue;
+	opacity: 0.5;
+	transition: all .35s;
+}
